@@ -1,0 +1,74 @@
+.carousel {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--ink);
+  border-top: none;
+}
+
+.navBtn {
+  width: 60px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--paper);
+  border: none;
+  font-family: var(--font-display), 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.navBtn:hover {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+.navBtn:focus-visible {
+  outline: 2px solid var(--rust);
+  outline-offset: -2px;
+}
+
+.prevBtn {
+  border-right: 1px solid var(--ink);
+}
+
+.nextBtn {
+  border-left: 1px solid var(--ink);
+}
+
+.track {
+  flex: 1;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 300ms ease;
+}
+
+/* Responsive */
+@media (max-width: 639px) {
+  .carousel {
+    flex-direction: column;
+  }
+
+  .navBtn {
+    width: 100%;
+    height: 48px;
+  }
+
+  .prevBtn {
+    order: -1;
+    border-right: none;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .nextBtn {
+    order: 1;
+    border-left: none;
+    border-top: 1px solid var(--ink);
+  }
+}

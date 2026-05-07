@@ -1,0 +1,219 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--paper);
+  border-bottom: 2px solid var(--ink);
+}
+
+.navInner {
+  display: flex;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  border-right: 1px solid var(--ink);
+  font-family: var(--font-body), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background-color: var(--paper);
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease;
+  white-space: nowrap;
+}
+
+.cell:hover {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+/* Static cell - no hover effect */
+.cellStatic {
+  cursor: default;
+}
+
+.cellStatic:hover {
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+/* Brand cell - inverted by default */
+.brand {
+  background-color: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-display), 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: -0.02em;
+}
+
+.brand:hover {
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+.bracket {
+  opacity: 0.6;
+}
+
+/* Desktop nav container */
+.desktopNav {
+  display: flex;
+  margin-left: auto;
+}
+
+/* Arrow for external links */
+.arrow {
+  margin-left: 2px;
+  transition: color 150ms ease;
+}
+
+.cell:hover .arrow,
+.mobileItem:hover .arrow {
+  color: var(--rust);
+}
+
+/* Meta cell */
+.meta {
+  border-right: none;
+}
+
+.metaLabel {
+  font-family: var(--font-mono), 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Hamburger button - hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 48px;
+  padding: 14px;
+  border: none;
+  border-left: 1px solid var(--ink);
+  background-color: var(--paper);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.hamburgerLine {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: var(--ink);
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* Mobile overlay */
+.mobileOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  top: 48px;
+  background-color: rgba(26, 61, 46, 0.5);
+  z-index: 99;
+  animation: fadeIn 150ms ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile menu */
+.mobileMenu {
+  background-color: var(--paper);
+  border-bottom: 2px solid var(--ink);
+  animation: slideDown 200ms ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobileItem {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--ink);
+  font-family: var(--font-body), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background-color: var(--paper);
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.mobileItem:hover {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+/* Static mobile item - no hover effect */
+.mobileItemStatic {
+  cursor: default;
+}
+
+.mobileItemStatic:hover {
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+.mobileItem:last-child {
+  border-bottom: none;
+}
+
+/* Mobile styles */
+@media (max-width: 639px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .meta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobileOverlay {
+    display: block;
+  }
+
+  .brand {
+    font-size: 11px;
+  }
+}

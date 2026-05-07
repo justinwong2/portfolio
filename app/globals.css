@@ -1,9 +1,223 @@
-* {
+/* ==========================================
+   Portfolio — Forest Brutalist Design System
+   ========================================== */
+
+/* Color Palette */
+:root {
+  --ink: #1a3d2e;      /* Deep forest green — type, rules, fills */
+  --paper: #f5e6c8;    /* Warm cream — background, inverse type */
+  --rust: #d4642a;     /* Burnt orange — accent only, sparingly */
+  --dim: #2d5742;      /* Muted green — secondary text, dashed rules */
+}
+
+/* Post-it Colors */
+:root {
+  --postit-yellow: #ffeb3b;
+  --postit-pink: #f48fb1;
+  --postit-cyan: #4dd0e1;
+  --postit-green: #81c784;
+  --postit-white: #fafafa;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--ink);
+  background-color: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(72px, 14vw, 220px);
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+/* Eyebrow / Metadata text */
+.eyebrow {
+  font-family: var(--font-body), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+/* Mono / Code */
+code, .mono {
+  font-family: var(--font-mono), 'JetBrains Mono', monospace;
+  font-size: 13px;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Section dividers */
+.section-divider {
+  border-bottom: 2px solid var(--ink);
+}
+
+.inner-divider {
+  border-bottom: 1px solid var(--ink);
+}
+
+/* 12-column grid */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+/* Card pattern */
+.card {
+  padding: 18px;
+  border: 1px solid var(--ink);
+  background-color: var(--paper);
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.card:hover {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+/* Tag pattern */
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1.5px solid currentColor;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Button patterns */
+.btn {
+  display: inline-block;
+  padding: 14px 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition: opacity 150ms ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-primary {
+  background-color: var(--rust);
+  color: var(--paper);
+}
+
+.btn-secondary {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+/* Rust accent */
+.rust {
+  color: var(--rust);
+}
+
+/* Dimmed text */
+.dimmed {
+  color: var(--dim);
+}
+
+/* Inverted cell pattern */
+.inverted {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+/* Transitions */
+.hover-invert {
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.hover-invert:hover {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1279px) {
+  /* xl: wide desktop */
+}
+
+@media (max-width: 1023px) {
+  /* lg: desktop */
+  h1 {
+    font-size: clamp(48px, 10vw, 120px);
+  }
+}
+
+@media (max-width: 639px) {
+  /* sm: mobile */
+  h1 {
+    font-size: clamp(36px, 12vw, 72px);
+  }
+
+  body {
+    font-size: 13px;
+  }
+}
+
+/* Utility: visually hidden (for accessibility) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

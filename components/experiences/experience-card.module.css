@@ -1,0 +1,126 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  border: 1px solid var(--ink);
+  background-color: var(--paper);
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  background-color: var(--ink);
+  color: var(--paper);
+  outline: none;
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--rust);
+  outline-offset: 2px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.num {
+  font-family: var(--font-mono), 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--dim);
+  transition: color 150ms ease;
+}
+
+.card:hover .num {
+  color: var(--paper);
+  opacity: 0.7;
+}
+
+.period {
+  font-family: var(--font-body), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--dim);
+  transition: color 150ms ease;
+}
+
+.card:hover .period {
+  color: var(--paper);
+  opacity: 0.7;
+}
+
+.company {
+  font-family: var(--font-display), 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.role {
+  font-family: var(--font-body), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.location {
+  font-family: var(--font-body), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--dim);
+  margin-bottom: 12px;
+  transition: color 150ms ease;
+}
+
+.card:hover .location {
+  color: var(--paper);
+  opacity: 0.7;
+}
+
+.description {
+  font-family: var(--font-body), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-wrap: pretty;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.readMore {
+  font-family: var(--font-body), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 4px;
+  transition: color 150ms ease, transform 150ms ease;
+}
+
+.card:hover .arrow {
+  color: var(--rust);
+  transform: translateX(2px);
+}

@@ -1,0 +1,39 @@
+.wrapper {
+  border: 1px solid var(--ink);
+  border-top: none;
+}
+
+.board {
+  position: relative;
+  height: 560px;
+  background-color: var(--paper);
+  overflow: hidden;
+}
+
+/* Lined paper effect */
+.lines {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 23px,
+    var(--ink) 23px,
+    var(--ink) 24px
+  );
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 1023px) {
+  .board {
+    height: 480px;
+  }
+}
+
+@media (max-width: 639px) {
+  .board {
+    height: 400px;
+  }
+}
