@@ -35,10 +35,8 @@ Responsbilities:
     role: 'Data Science and Operations Intern',
     period: 'May 2025 - Dec 2025',
     location: 'Singapore',
-    description: 'Developed features for a SaaS platform serving enterprise clients in the fintech space.',
-    writeup: `Healthtech Startup focused on orthopedics and knee health diagnosis.
-
-Responsibilities:
+    description: 'Healthtech Startup focused on orthopedics and knee health diagnosis.',
+    writeup: `Responsibilities:
 - Built an end-to-end ML Pipeline for knee health detection, built with React, FastAPI, Supabase and Docker containerisation, deployed on Fly.io.
 - Developed a PWA for medical device's using Astro, Svelte, and DaisyUI, integrating with RESTful backend APIs (ElysiaJS).
 - Streamlined clinical report workflows with n8n automation, saving 30 minutes per report.

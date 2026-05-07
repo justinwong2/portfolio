@@ -73,30 +73,32 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
 
           {/* Links */}
-          {(project.githubUrl || project.demoUrl) && (
-            <div className={styles.links}>
-              {project.githubUrl && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.link}
-                >
-                  GitHub ↗
-                </a>
-              )}
-              {project.demoUrl && (
-                <a
-                  href={project.demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${styles.link} ${styles.linkPrimary}`}
-                >
-                  Live Demo ↗
-                </a>
-              )}
-            </div>
-          )}
+          <div className={styles.links}>
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.link}
+              >
+                GitHub ↗
+              </a>
+            )}
+            {project.demoUrl ? (
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${styles.link} ${styles.linkPrimary}`}
+              >
+                Live Demo ↗
+              </a>
+            ) : (
+              <span className={`${styles.link} ${styles.linkDisabled}`}>
+                Live Demo ↗
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </div>

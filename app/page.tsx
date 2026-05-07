@@ -26,7 +26,7 @@ export default function Home() {
 
         {/* Work Section */}
         <section id="work" className="section-divider">
-          <SectionHeader number="02" title="SELECTED WORK / PROJECTS" count={projects.length} />
+          <SectionHeader number="02" title="PROJECTS" count={projects.length} />
           <ProjectsGrid />
         </section>
 
