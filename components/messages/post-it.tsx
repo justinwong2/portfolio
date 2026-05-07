@@ -15,8 +15,8 @@ export function PostIt({ message }: PostItProps) {
         '--rotation': `${message.rotation}deg`,
       } as React.CSSProperties}
     >
-      <p className={styles.content}>{message.content}</p>
       <span className={styles.author}>— {message.authorName}</span>
+      <p className={styles.content}>{message.content}</p>
     </div>
   );
 }
