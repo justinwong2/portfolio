@@ -6,11 +6,10 @@ interface MetaItem {
 }
 
 const metaItems: MetaItem[] = [
-  { label: 'INDEX', value: '001' },
-  { label: 'SUBJECT', value: 'PORTFOLIO' },
-  { label: 'STATUS', value: "OPEN TO SUMMER '26" },
+  { label: 'EDUCATION', value: 'NUS BUSINESS ANALYTICS' },
+  { label: 'EXPECTED GRADUATION', value: 'MAY 2027' },
   { label: 'LOCATION', value: 'SINGAPORE' },
-  { label: 'FILED', value: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).toUpperCase() },
+  { label: 'UPDATED', value: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).toUpperCase() },
 ];
 
 export function Hero() {
@@ -29,9 +28,8 @@ export function Hero() {
       {/* Display - cols 4-12 */}
       <div className={styles.display}>
         <h1 className={styles.headline}>
-          FULL<br />
-          <span className={styles.rust}>STACK</span><br />
-          DEV
+          Justin <br />
+          <span className={styles.rust}>Wong</span><br />
         </h1>
 
         <div className={styles.divider} />
@@ -45,13 +43,13 @@ export function Hero() {
           </div>
           <div className={styles.bioSidebar}>
             <span className={styles.bioLabel}>OPEN TO</span>
-            <span className={styles.bioValue}>SUMMER &apos;26</span>
+            <span className={styles.bioValue}>AUG - DEC &apos;26</span>
             <div className={styles.bioTags}>
+              <span>AI/ML</span>
+              <span>·</span>
               <span>DS</span>
               <span>·</span>
-              <span>ML</span>
-              <span>·</span>
-              <span>INFRA</span>
+              <span>CLOUD</span>
             </div>
           </div>
         </div>

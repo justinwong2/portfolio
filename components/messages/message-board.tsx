@@ -1,36 +1,71 @@
 'use client';
 
-import { useState } from 'react';
-import { mockMessages, generateRandomPosition, getRandomColor, type Message } from '@/data/messages';
+import { useState, useEffect } from 'react';
+import { mockMessages, type Message } from '@/data/messages';
 import { PostIt } from './post-it';
 import { MessageForm } from './message-form';
 import styles from './message-board.module.css';
 
 export function MessageBoard() {
-  const [messages, setMessages] = useState<Message[]>(mockMessages);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleNewMessage = (content: string) => {
-    const newMessage: Message = {
-      id: String(Date.now()),
-      authorName: 'Demo User', // In production, this comes from auth
-      content,
-      color: getRandomColor(),
-      ...generateRandomPosition(),
-      createdAt: new Date(),
-    };
+  useEffect(() => {
+    async function loadMessages() {
+      try {
+        const response = await fetch('/api/messages');
+        if (!response.ok) throw new Error('Failed to fetch');
+        const data = await response.json();
+        setMessages(data);
+      } catch (err) {
+        console.error('Failed to load messages:', err);
+        setMessages(mockMessages);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    loadMessages();
+  }, []);
 
-    setMessages((prev) => [...prev, newMessage]);
+  const handleNewMessage = async (authorName: string, content: string) => {
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ authorName, content }),
+      });
+
+      if (!response.ok) {
+        const err = await response.json();
+        throw new Error(err.error || 'Failed to post message');
+      }
+
+      const newMessage = await response.json();
+      setMessages((prev) => [...prev, newMessage]);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to post message');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className={styles.wrapper}>
-      <MessageForm onSubmit={handleNewMessage} />
+      <MessageForm onSubmit={handleNewMessage} disabled={isSubmitting} />
+      {error && <div className={styles.error}>{error}</div>}
       <div className={styles.board}>
-        {/* Lined paper background */}
         <div className={styles.lines} aria-hidden="true" />
 
-        {/* Post-its */}
-        {messages.map((message, index) => (
+        {isLoading && (
+          <div className={styles.loadingState}>Loading messages...</div>
+        )}
+
+        {messages.map((message) => (
           <PostIt key={message.id} message={message} />
         ))}
       </div>

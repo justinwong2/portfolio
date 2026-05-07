@@ -25,6 +25,28 @@
   pointer-events: none;
 }
 
+.error {
+  padding: 12px 20px;
+  background-color: var(--rust);
+  color: var(--paper);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.loadingState {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--dim);
+}
+
 /* Responsive */
 @media (max-width: 1023px) {
   .board {
