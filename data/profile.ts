@@ -1,3 +1,3 @@
 export const profile = {
-  headshot: '/images/headshot.jpg',
+  headshot: '/images/me4.jpg',
 };

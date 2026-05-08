@@ -9,9 +9,12 @@ import { Footer } from '@/components/footer';
 import { experiences } from '@/data/experiences';
 import { projects } from '@/data/projects';
 import { photos } from '@/data/photos';
-import { mockMessages } from '@/data/messages';
+import { db } from '@/lib/db';
+import { messages } from '@/lib/schema';
+import { count } from 'drizzle-orm';
 
-export default function Home() {
+export default async function Home() {
+  const [{ count: messageCount }] = await db.select({ count: count() }).from(messages);
   return (
     <>
       <Nav />
@@ -38,7 +41,7 @@ export default function Home() {
 
         {/* Messages Section */}
         <section id="messages" className="section-divider">
-          <SectionHeader number="04" title="MESSAGES" count={mockMessages.length} />
+          <SectionHeader number="04" title="MESSAGES" count={messageCount} />
           <MessageBoard />
         </section>
 

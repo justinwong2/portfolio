@@ -35,7 +35,7 @@ export const projects: Project[] = [
     num: '02',
     title: 'Ethereum Fraud Detection',
     subtitle: 'BT4012 Fraud Analytics',
-    description: 'Final Project focused on detecting fraudulent Ethereum Transactions using traditional ML and GNNs',
+    description: 'Final Project focused on detecting fraudulent Ethereum Transactions using traditional ML and GNNs.',
     writeup: `This was definitely one of the more challenging ML project that I have completed due to the nature of blockchain fraud detection. Unlike traditional fraud where transactions are often independent, crypto fraud frequently involves coordinated fraud rings operating across multiple accounts. The high transaction volume and rapidly shifting account relationships make it difficult to establish meaningful patterns. We faced the usual issues with fraudulent datasets - the data was very imbalanced with many of the transactions being unlabelled, mimicking real world conditions.
 
     Since the dataset actually contained real data with real account IDs, we made use of Etherscan to query for the transactions made by these accounts, and built a GNN to capture the transaction patterns. We also explored traditional methods such as XGBoost with Feature Engineering, which proved to be more robust compared to the GNNs.
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     num: '04',
     title: 'Twitter Bot Detection',
     subtitle: 'BT4012 Fraud Analytics',
-    description: 'Kaggle Competition, achieved 41/113 Students',
+    description: 'Kaggle Competition, achieved 41/113 Students.',
     writeup: `Objective of this competition was to detect Twitter Bot users from human users based on profile features. This was another full ML pipeline project, and something notable I did was finetuning pretrained HuggingFace models to provide a confidence score for the text feature in the dataset while also ensuring no data leakage between the train and test sets.
 
     As this was my first Kaggle competition, I made the fatal mistake of optimising for the public leaderboard and overfit my model to it. My ranking actually dropped 35 places after the full dataset was used to evaluate the model, which was devasting as we were graded based on our leaderboard positions. My mistake was not having a more robust validation - I only had a train and test set without an evaluation set, and this was something I definitely took note of for my future ML projects. 
@@ -99,7 +99,7 @@ export const projects: Project[] = [
     num: '06',
     title: 'SupHub',
     subtitle: 'BT3103 Application Systems Development for Business Analytics',
-    description: 'P2P Supper Ordering Site built for NUS hall students',
+    description: 'P2P Supper Ordering Site built for NUS hall students.',
     writeup: `First web dev project built with Vue.js + Firebase, allow students to post and accept supper orders, circumventing the expesnive Grab delivery fees.
     `,
     tags: ['Vue', 'FIREBASE'],

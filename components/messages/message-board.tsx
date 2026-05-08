@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { mockMessages, type Message } from '@/data/messages';
+import type { Message } from '@/data/messages';
 import { PostIt } from './post-it';
 import { MessageForm } from './message-form';
 import styles from './message-board.module.css';
@@ -21,7 +21,7 @@ export function MessageBoard() {
         setMessages(data);
       } catch (err) {
         console.error('Failed to load messages:', err);
-        setMessages(mockMessages);
+        setError('Failed to load messages');
       } finally {
         setIsLoading(false);
       }
