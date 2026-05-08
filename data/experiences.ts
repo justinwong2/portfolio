@@ -42,7 +42,7 @@ Responsbilities:
 - Streamlined clinical report workflows with n8n automation, saving 30 minutes per report.
 - Collaborated in an Agile environment with daily standups, weekly sprint planning and reviews.
 `,
-    tags: ['ML', 'PWA'],
+    tags: ['ML', 'PWA', 'AUTOMATION','SUPABASE'],
     companyUrl: 'https://www.precix.io/',
   },
   

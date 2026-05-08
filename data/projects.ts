@@ -24,7 +24,7 @@ export const projects: Project[] = [
 
     Through this project, I learnt more about deployment workflows - staging and prod environments, CI/CD with Github Actions, deployment via EC2 and S3 + Cloudfront. Currently trying to integrate the project with EcoVolt Plugs for more acccurate cycle tracking, but still a work in progress.
 `,
-    tags: ['Next.js', 'TypeScript', 'Postgres'],
+    tags: ['REACT', 'FASTAPI'],
     year: '2026',
     role: 'Fullstack',
     githubUrl: 'https://github.com/justinwong2/laundry',
@@ -42,7 +42,7 @@ export const projects: Project[] = [
 
     The key challenge we faced would be the temporal nature of the dataset - each time period was independent from the previous, and the same account might not persist across the time periods, making it hard to establish long term trends.
 `,
-    tags: ['Rust', 'CLI', 'DevTools'],
+    tags: ['ML', 'MLFLOW'],
     year: '2025',
     role: 'Development',
     githubUrl: 'https://github.com/justinwong2/BT4012_ML',
@@ -58,9 +58,9 @@ export const projects: Project[] = [
 
     We made use of PySpark for distributed training and Databricks for the training environment, and this was important as the dataset was large (hence the module name big data analytics lol). Through this project I built up a strong understanding and foundation for building ML pipelines and the Dos and Don'ts when working with the data for training. 
 `,
-    tags: ['React'],
+    tags: ['ML'],
     year: '2025',
-    role: 'Frontend Lead',
+    role: 'ML Development',
     githubUrl: 'https://github.com/justinwong2/Credit_Card_Fraud_Detection_ML',
     demoUrl: '',
   },
@@ -74,7 +74,7 @@ export const projects: Project[] = [
 
     As this was my first Kaggle competition, I made the fatal mistake of optimising for the public leaderboard and overfit my model to it. My ranking actually dropped 35 places after the full dataset was used to evaluate the model, which was devasting as we were graded based on our leaderboard positions. My mistake was not having a more robust validation - I only had a train and test set without an evaluation set, and this was something I definitely took note of for my future ML projects. 
 `,
-    tags: ['ML'],
+    tags: ['ML', 'MLFLOW'],
     year: '2025',
     role: 'ML Development',
     githubUrl: 'https://github.com/justinwong2/TwitterBot_Detection_ML',
@@ -88,7 +88,7 @@ export const projects: Project[] = [
     description: 'Kaggle Competition, achieved 11/113 students.',
     writeup: ` The objective of this project was to detect AI-generated text from human-written text based on text. I explored textual feature engineering such as text complexity, syntactic structure and lexical diversity. I also finetuned a pretrained HuggingFace model to provide a confidence score. 
 `,
-    tags: ['ML'],
+    tags: ['ML', 'MLFLOW'],
     year: '2025',
     role: 'ML Development',
     githubUrl: 'https://github.com/justinwong2/AI_Text_Detection_ML',
@@ -102,7 +102,7 @@ export const projects: Project[] = [
     description: 'P2P Supper Ordering Site built for NUS hall students',
     writeup: `First web dev project built with Vue.js + Firebase, allow students to post and accept supper orders, circumventing the expesnive Grab delivery fees.
     `,
-    tags: ['Vue'],
+    tags: ['Vue', 'FIREBASE'],
     year: '2025',
     role: 'Fullstack',
     githubUrl: 'https://github.com/justin/ml-pipeline',

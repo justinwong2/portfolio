@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import styles from './hero.module.css';
+import { profile } from '@/data/profile';
 
 interface MetaItem {
   label: string;
@@ -27,10 +29,20 @@ export function Hero() {
 
       {/* Display - cols 4-12 */}
       <div className={styles.display}>
-        <h1 className={styles.headline}>
-          Justin <br />
-          <span className={styles.rust}>Wong</span><br />
-        </h1>
+        <div className={styles.headlineRow}>
+          <h1 className={styles.headline}>
+            Justin <br />
+            <span className={styles.rust}>Wong</span>
+          </h1>
+          <div className={styles.headshotContainer}>
+            <Image
+              src={profile.headshot}
+              alt="Justin Wong"
+              fill
+              className={styles.headshot}
+            />
+          </div>
+        </div>
 
         <div className={styles.divider} />
 
@@ -38,7 +50,11 @@ export function Hero() {
         <div className={styles.bioSection}>
           <div className={styles.bioText}>
             <p>
-              Year 3 at the National University of Singapore, aspiring data scientist &amp; ML engineer. I like shipping end-to-end systems, getting my hands dirty with messy data, and disappearing into US national parks on weekends I can swing them.
+              Hi everyone, I’m Justin, a Year 3 Business Analytics student at NUS. I’m currently exploring different career paths, with a strong interest in areas like MLOps, AI Engineering, and Cloud Architecture. I enjoy building projects for fun as a way to gain hands-on experience with technologies that interest me and to continuously learn new things.
+
+Outside of tech, I enjoy hiking and working out - one of my life goals is to visit every National Park in the US before I die!
+
+I’m always open to connecting with like-minded people. If you’re interested in tech, building projects, or just want to chat, feel free to drop me a message on LinkedIn!
             </p>
           </div>
           <div className={styles.bioSidebar}>

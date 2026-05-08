@@ -50,6 +50,13 @@
   padding: 40px 60px;
 }
 
+.headlineRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
 .headline {
   font-family: var(--font-display), 'Space Grotesk', sans-serif;
   font-size: clamp(72px, 14vw, 180px);
@@ -58,6 +65,19 @@
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: var(--ink);
+}
+
+.headshotContainer {
+  position: relative;
+  width: 208px;
+  height: 270px;
+  flex-shrink: 0;
+  border: 2px solid var(--ink);
+  background-color: var(--rust);
+}
+
+.headshot {
+  object-fit: cover;
 }
 
 .rust {
@@ -161,8 +181,17 @@
     padding: 40px;
   }
 
+  .headlineRow {
+    gap: 24px;
+  }
+
   .headline {
     font-size: clamp(48px, 12vw, 100px);
+  }
+
+  .headshotContainer {
+    width: 188px;
+    height: 240px;
   }
 
   .divider {
@@ -202,8 +231,20 @@
     padding: 32px 20px;
   }
 
+  .headlineRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
   .headline {
     font-size: clamp(36px, 15vw, 72px);
+  }
+
+  .headshotContainer {
+    width: 120px;
+    height: 156px;
+    align-self: flex-end;
   }
 
   .divider {
