@@ -35,7 +35,7 @@ export function PhotoCarousel() {
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {photos.map((photo) => (
-            <PhotoSlide key={photo.id} photo={photo} total={total} />
+            <PhotoSlide key={photo.id} photo={photo} />
           ))}
         </div>
       </div>

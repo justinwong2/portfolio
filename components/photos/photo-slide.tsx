@@ -3,20 +3,23 @@ import styles from './photo-slide.module.css';
 
 interface PhotoSlideProps {
   photo: Photo;
-  total: number;
 }
 
-export function PhotoSlide({ photo, total }: PhotoSlideProps) {
-  const indexStr = String(photo.index).padStart(2, '0');
-  const totalStr = String(total).padStart(2, '0');
+export function PhotoSlide({ photo }: PhotoSlideProps) {
+  const imageCount = photo.images.length;
+  const gridClass = imageCount === 4 ? styles.grid4 : styles.grid2;
 
   return (
     <div className={styles.slide}>
-      {/* Image placeholder - using a colored div since we don't have actual images */}
-      <div className={styles.imageWrapper}>
-        <div className={styles.imagePlaceholder}>
-          <span className={styles.placeholderText}>{photo.label}</span>
-        </div>
+      <div className={`${styles.imageWrapper} ${gridClass}`}>
+        {photo.images.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt={`${photo.label} ${i + 1}`}
+            className={styles.image}
+          />
+        ))}
       </div>
 
       {/* Meta panel */}
@@ -30,8 +33,8 @@ export function PhotoSlide({ photo, total }: PhotoSlideProps) {
           <span className={styles.metaValue}>{photo.date}</span>
         </div>
         <div className={styles.metaCell}>
-          <span className={styles.metaLabel}>INDEX</span>
-          <span className={styles.metaValue}>{indexStr}/{totalStr}</span>
+          <span className={styles.metaLabel}>DESCRIPTION</span>
+          <span className={styles.metaValue}>{photo.description}</span>
         </div>
       </aside>
     </div>
